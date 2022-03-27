@@ -1,0 +1,147 @@
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+.btn,
+a.btn,
+button.btn {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.5;
+    position: relative;
+    display: inline-block;
+    padding: 1rem 4rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: #212529;
+    border-radius: 0.5rem;
+}
+
+.gameTitle {
+    font-size : 150px;
+    font-weight : bold;
+    font-family : "Arial Black";
+    text-align : center;
+    padding-top: 40px;
+    z-index: 2;
+}
+
+.gameTitle_2fingers {
+    color: #b84c00;
+    background-color: rgb(37, 37, 37);
+    font-size : 25px;
+    font-weight : bold;
+    font-family : "Arial Black";
+    text-align : start;
+}
+
+.startInfo {
+    font-size : 20px;
+    font-family : "Arial Black";
+    text-align : center;
+    padding-top: 100px;
+    z-index: 2;
+}
+
+.selectBtn {
+    padding-top: 5px;
+    z-index: 2;
+}
+
+a.btn--orange {
+    font-size : 45px;
+    font-family : "Arial Black";
+    color: #fff;
+    background-color: #eb6100;
+    border-bottom: 5px solid #b84c00;
+    z-index: 2;
+}
+a.btn--orange:hover {
+    margin-top: 3px;
+    color: #fff;
+    background: #f56500;
+    border-bottom: 2px solid #b84c00;
+}
+a.btn--shadow {
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
+.opponentArea {
+    padding-top: 20px;
+}
+
+.opponentName {
+    color: rgb(0, 49, 184);
+    font-size : 20px;
+    font-family : "Arial Black";
+    text-align : center;
+}
+
+.playerArea {
+    padding-top: 20px;
+}
+
+.playerName {
+    color: rgb(184, 0, 0);
+    font-size : 25px;
+    font-family : "Arial Black";
+    text-align : center;
+}
+
+.fingerSize {
+    font-size: 50px;
+}
+
+.opponentFingerSize {
+    font-size: 150px;
+    color: rgb(0, 49, 184);
+}
+
+.playerFingerSize {
+    font-size: 250px;
+    color: rgb(184, 0, 0);
+}
+
+.opponentFinger_right {
+    transform:rotate(45deg);
+}
+
+.opponentFinger_left {
+    transform:rotate(135deg);
+}
+
+.playerFinger_right {
+    transform:rotate(-135deg);
+}
+
+.playerFinger_left {
+    transform:rotate(-45deg);
+}
+
+.player4Finger_right {
+    transform:rotate(45deg);
+}
+
+.opponent4Finger_left {
+    transform:rotate(-45deg);
+}
+
