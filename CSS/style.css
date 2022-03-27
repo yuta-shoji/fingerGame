@@ -35,6 +35,10 @@ button.btn {
     border-radius: 0.5rem;
 }
 
+/* ########################################################################################################################################### */
+/* トップページ */
+/* ########################################################################################################################################### */
+
 .gameTitle {
     font-size : 150px;
     font-weight : bold;
@@ -44,13 +48,9 @@ button.btn {
     z-index: 2;
 }
 
-.gameTitle_2fingers {
-    color: #b84c00;
-    background-color: rgb(37, 37, 37);
-    font-size : 25px;
-    font-weight : bold;
-    font-family : "Arial Black";
-    text-align : start;
+.selectBtn {
+    padding-top: 5px;
+    z-index: 2;
 }
 
 .startInfo {
@@ -58,11 +58,6 @@ button.btn {
     font-family : "Arial Black";
     text-align : center;
     padding-top: 100px;
-    z-index: 2;
-}
-
-.selectBtn {
-    padding-top: 5px;
     z-index: 2;
 }
 
@@ -85,63 +80,102 @@ a.btn--shadow {
     box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
 }
 
-.opponentArea {
+.fingerSizeInTop {
+    font-size: 50px;
+}
+
+/* ########################################################################################################################################### */
+/* ゲームページ */
+/* ########################################################################################################################################### */
+
+/* ====================================================== */
+/* 共通 */
+/* ====================================================== */
+
+.opponentArea_Common {
     padding-top: 20px;
 }
 
-.opponentName {
+.opponentName_Common {
     color: rgb(0, 49, 184);
     font-size : 20px;
     font-family : "Arial Black";
     text-align : center;
 }
 
-.playerArea {
+.playerArea_Common {
     padding-top: 20px;
 }
 
-.playerName {
+.playerName_Common {
     color: rgb(184, 0, 0);
     font-size : 25px;
     font-family : "Arial Black";
     text-align : center;
 }
 
-.fingerSize {
-    font-size: 50px;
-}
-
-.opponentFingerSize {
+.opponentFingerSize_Common {
     font-size: 150px;
     color: rgb(0, 49, 184);
 }
-
-.playerFingerSize {
+.playerFingerSize_Common {
     font-size: 250px;
     color: rgb(184, 0, 0);
 }
 
+.gameTitleFingers_Common {
+    color: #b84c00;
+    background-color: rgb(37, 37, 37);
+    font-size : 25px;
+    font-weight : bold;
+    font-family : "Arial Black";
+    text-align : start;
+}
+
+/* Fist設定 */
+.opponentFist_right {
+    transform: rotate(160deg);
+}
+.opponentFist_left {
+    transform: rotate(200deg) scale(-1, 1);
+}
+.playerFist_right {
+    transform: rotate(315deg) scale(-1, 1);
+}
+.playerFist_left {
+    transform: rotate(45deg);
+}
+
+/* ====================================================== */
+/* 2Finger設定 */
+/* ====================================================== */
+
 .opponentFinger_right {
-    transform:rotate(45deg);
+    transform:rotate(70deg);
 }
-
 .opponentFinger_left {
-    transform:rotate(135deg);
+    transform:rotate(110deg);
 }
-
 .playerFinger_right {
     transform:rotate(-135deg);
 }
-
 .playerFinger_left {
     transform:rotate(-45deg);
 }
 
+/* ====================================================== */
+/* 4Finger設定 */
+/* ====================================================== */
+
+.opponent4Finger_right {
+    transform:rotate(70deg);
+}
+.opponent4Finger_left {
+    transform:rotate(-70deg);
+}
 .player4Finger_right {
     transform:rotate(45deg);
 }
-
-.opponent4Finger_left {
+.player4Finger_left {
     transform:rotate(-45deg);
 }
-
