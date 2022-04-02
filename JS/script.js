@@ -1,5 +1,3 @@
-//FistIcon格納
-
 function test(actual, expected) {
     if (JSON.stringify(actual) === JSON.stringify(expected)) {
         console.log("Test PASSED.");
@@ -28,6 +26,14 @@ const fourFingersToRightOfOpponent = "fa fa-hand-o-right d-flex align-items-cent
 const fourFingersToLeftOfOpponent = "fa fa-hand-o-left d-flex align-items-center justify-content-center opponentFingerSize_Common opponent4Finger_left";
 const fourFingersToRightOfPlayer = "fa fa-hand-o-left d-flex align-items-center justify-content-center playerFingerSize_Common player4Finger_right";
 const fourFingersToLeftOfPlayer = "fa fa-hand-o-right d-flex align-items-center justify-content-center playerFingerSize_Common playerFinger_left";
+//Icon出力先要素格納
+const opponentsRightTarget = document.getElementById("opponentsRight");
+const opponentsLeftTarget = document.getElementById("opponentsLeft");
+const playersRightTarget = document.getElementById("playersRight");
+const playersLeftTarget = document.getElementById("playersLeft");
+//選択した番号表示先格納
+const totalDisplay = document.getElementById("totalDisplay")
+const myDisplay = document.getElementById("myDisplay")
 
 //初期化
 let maxFinger = 4;
@@ -39,20 +45,33 @@ const totalFingerEvent = document.querySelectorAll(".totalFingerEvent");
 const myFingerEvent = document.querySelectorAll(".myFingerEvent");
 const readyFight = document.querySelectorAll(".readyFight");
 
+//選択された数字を画面に反映 & 数字を返す
+function addTotalFinger(elem) {
+    totalDisplay.innerText = elem.innerText;
+    return elem.innerText;
+}
+function addMyFinger(elem) {
+    myDisplay.innerText = elem.innerText;
+    return elem.innerText;
+}
+
+//各ボタンにクリックイベントを付与
 function addEvent(elem) {
     if (elem.classList.contains("totalFingerEvent") === true) {
-        elem.addEventListener("click", () => totalFinger = elem.innerText);
+        elem.addEventListener("click", () => totalFinger = addTotalFinger(elem));
     } else if (elem.classList.contains("myFingerEvent") === true) {
-        elem.addEventListener("click", () => myFinger = elem.innerText);
+        elem.addEventListener("click", () => myFinger = addMyFinger(elem));
     } else {
-        elem.addEventListener("click", readyFight);
+        elem.addEventListener("click", getReadyFight);
     }
 }
 
-//イベント付与
+//イベント付与関数を呼び出し
 totalFingerEvent.forEach(addEvent)
 myFingerEvent.forEach(addEvent)
+readyFight.forEach(addEvent)
 
-function readyFight () {
-
+function getReadyFight () {
+    
 }
+

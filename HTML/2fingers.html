@@ -27,13 +27,21 @@
             </div>
             <div class='row mt-0 opponentArea_Common'>
                 <div class='col-2 offset-2'>
-                    <i class='fa fa-hand-grab-o d-flex align-items-center justify-content-center opponentFingerSize_Common opponentFist_right'></i>
+                    <i id="opponentsRight" class='fa fa-hand-grab-o d-flex align-items-center justify-content-center opponentFingerSize_Common opponentFist_right'></i>
                 </div>
                 <div class='col-2'>
-                    <i class='fa fa-hand-grab-o fa-flip-horizontal d-flex align-items-center justify-content-center opponentFingerSize_Common opponentFist_left'></i>
+                    <i id="opponentsLeft" class='fa fa-hand-grab-o fa-flip-horizontal d-flex align-items-center justify-content-center opponentFingerSize_Common opponentFist_left'></i>
                 </div>
                 <div class='col-4 offset-2'>
                     <a type="button" class="btn btn-success readyFight d-flex align-items-center justify-content-center">Ready Fight!!</a>
+                    <div class="row mt-5">
+                        <div class="col-6">
+                            <div id="totalDisplay" class="fingerDisplay d-flex align-items-center justify-content-center">0</div>
+                        </div>
+                        <div class="col-6">
+                            <div id="myDisplay" class="fingerDisplay d-flex align-items-center justify-content-center">0</div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class='row mt-0'>
@@ -46,22 +54,22 @@
             </div>
             <div class='row mt-0 playerArea_Common'>
                 <div class='col-3 offset-1'>
-                    <i class='fa fa-hand-grab-o fa-flip-horizontal d-flex align-items-center justify-content-center playerFingerSize_Common playerFist_left'></i>
+                    <i id="playersLeft" class='fa fa-hand-grab-o fa-flip-horizontal d-flex align-items-center justify-content-center playerFingerSize_Common playerFist_left'></i>
                 </div>
                 <div class='col-3'>
-                    <i class='fa fa-hand-grab-o d-flex align-items-center justify-content-center playerFingerSize_Common playerFist_right'></i>
+                    <i id="playersRight" class='fa fa-hand-grab-o d-flex align-items-center justify-content-center playerFingerSize_Common playerFist_right'></i>
                 </div>
                 <div class='col-2 offset-1'>
-                    <a type="button" class="btn btn-warning fingerSelectBtn totalFingerEvent d-flex align-items-center justify-content-center">0</a>
-                    <a type="button" class="btn btn-warning fingerSelectBtn totalFingerEvent d-flex align-items-center justify-content-center">1</a>
-                    <a type="button" class="btn btn-warning fingerSelectBtn totalFingerEvent d-flex align-items-center justify-content-center">2</a>
-                    <a type="button" class="btn btn-warning fingerSelectBtn totalFingerEvent d-flex align-items-center justify-content-center">3</a>
-                    <a type="button" class="btn btn-warning fingerSelectBtn totalFingerEvent d-flex align-items-center justify-content-center">4</a>
+                    <a href="#" type="button" class="btn btn-warning fingerSelectBtn totalFingerEvent d-flex align-items-center justify-content-center" data-toggle="button" aria-pressed="false" autocomplete="off">0</a>
+                    <a href="#" type="button" class="btn btn-warning fingerSelectBtn totalFingerEvent d-flex align-items-center justify-content-center" data-toggle="button" aria-pressed="false" autocomplete="off">1</a>
+                    <a href="#" type="button" class="btn btn-warning fingerSelectBtn totalFingerEvent d-flex align-items-center justify-content-center" data-toggle="button" aria-pressed="false" autocomplete="off">2</a>
+                    <a href="#" type="button" class="btn btn-warning fingerSelectBtn totalFingerEvent d-flex align-items-center justify-content-center" data-toggle="button" aria-pressed="false" autocomplete="off">3</a>
+                    <a href="#" type="button" class="btn btn-warning fingerSelectBtn totalFingerEvent d-flex align-items-center justify-content-center" data-toggle="button" aria-pressed="false" autocomplete="off">4</a>
                 </div>
                 <div class='col-2'>
-                    <a type="button" class="btn btn-danger fingerSelectBtn myFingerEvent d-flex align-items-center justify-content-center">0</a>
-                    <a type="button" class="btn btn-danger fingerSelectBtn myFingerEvent d-flex align-items-center justify-content-center">1</a>
-                    <a type="button" class="btn btn-danger fingerSelectBtn myFingerEvent d-flex align-items-center justify-content-center">2</a>
+                    <a href="#" type="button" class="btn btn-danger fingerSelectBtn myFingerEvent d-flex align-items-center justify-content-center" data-toggle="button" aria-pressed="false" autocomplete="off">0</a>
+                    <a href="#" type="button" class="btn btn-danger fingerSelectBtn myFingerEvent d-flex align-items-center justify-content-center" data-toggle="button" aria-pressed="false" autocomplete="off">1</a>
+                    <a href="#" type="button" class="btn btn-danger fingerSelectBtn myFingerEvent d-flex align-items-center justify-content-center" data-toggle="button" aria-pressed="false" autocomplete="off">2</a>
                 </div>
             </div>
             <div class='row mt-0'>
