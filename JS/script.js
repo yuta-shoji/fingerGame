@@ -51,6 +51,10 @@ const colorList = ["turnAndResult_red", "turnAndResult_blue", "turnAndResult_gre
 //ターン判断フラグ
 let turnFlg = true;
 let isWinnerFlg = false;
+//Audio
+let readyAudio = new Audio('../AUDIO/ready.mp3');
+let fightAudio = new Audio('../AUDIO/fight.mp3');
+let congratulationsAudio = new Audio('../AUDIO/congratulations.mp3');
 
 //現在残ってる指
 let totalOfFingersNow = 4;
@@ -111,11 +115,21 @@ const myFingerEvent = document.querySelectorAll(".myFingerEvent");
 const readyFight = document.querySelectorAll(".readyFight");
 const modalButton = document.querySelector("#modalButton");
 const resultModalToggleLabel = document.querySelector("#resultModalToggleLabel");
+const startModalButton = document.querySelector("#startModalButton");
+const modalClose = document.querySelector("#modalClose");
 
 //イベント付与関数を呼び出し
 totalFingerEvent.forEach(addEvent);
 myFingerEvent.forEach(addEvent);
 readyFight.forEach(addEvent);
+
+async function startModal() {
+    await _sleep(2500);
+    modalClose.click();
+}
+
+startModalButton.click();
+startModal()
 
 //選択された数字を画面に反映 & 数字を返す
 function addTotalFinger(elem) {
@@ -278,10 +292,12 @@ async function getReadyFight () {
     let totalFightingFingers = playersFightingFingers + comFightingFingers;
     //テキスト反映
     showTurnAndResult("Ready...", "green");
+    readyAudio.play();
     //待機
-    await _sleep(1000);
+    await _sleep(1200);
     //テキスト反映
     showTurnAndResult("Fight !!!", "green");
+    fightAudio.play();
     //指を反映
     showFingers(comFightingFingers, comRemainingFingers, "com");
     showFingers(playersFightingFingers, playersRemainingFingers, "player");
@@ -326,6 +342,7 @@ async function getReadyFight () {
         } else {
             await _sleep(1500);
             modalButton.click();
+            congratulationsAudio.play();
         }
     }
     if (!turnFlg) {

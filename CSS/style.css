@@ -211,11 +211,18 @@ a.btn--shadow {
     color: rgb(0, 121, 36);
 }
 
+.backBtn{
+    font-family: "Arial Black";
+}
+
 #modalButton {
     display: none;
 }
+#startModalButton {
+    display: none;
+}
 .modal-content {
-    background-color: #0000008e;
+    background-color: #000000a4;
 }
 .modal-title {
     color: #ffffff;
@@ -228,10 +235,38 @@ a.btn--shadow {
     font-size: 25px;
     text-align: center;
 }
+.modal-header {
+    border: 0;
+    box-shadow: none;
+    background: none;
+    text-align: center;
+}
+.modal-footer {
+    border: 0;
+    box-shadow: none;
+    background: none;
+}
 .modalBtn {
     font-size: 20px;
     text-align: center;
     font-family: "Arial Black";
+}
+.startContent {
+    background-color: #000000a4;
+}
+.gameStarted {
+    color: #bb3030;
+    font-size: 70px;
+    text-align: center;
+    font-family: "Arial Black";
+}
+#modalClose {
+    width: 1px;
+    height: 1px;
+    color: #000000ab;
+    border: 0;
+    box-shadow: none;
+    background: none;
 }
 
 /* ====================================================== */
