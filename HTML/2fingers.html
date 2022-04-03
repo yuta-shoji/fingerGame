@@ -5,51 +5,99 @@
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
         <meta name='theme-color' content='#000000'>
-        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'
-        integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
         <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
-        <title>2Fingers</title>
+        <title>2 Fingers</title>
     </head>
-
     <body>
         <div class='container-fluid'>
             <div class='row'>
                 <div class='gameTitleFingers_Common'>　2 Fingers Game</div>
             </div>
             <div class='row mt-1'>
-                <div class='col-2 offset-3'>
-                    <div class='opponentName_Common'>Opponent</div>
+                <div class='col-3'>
+                    <!-- Modal -->
+                    <button class="btn btn-primary" data-bs-toggle="modal" href="#resultModalToggle" role="button" id="modalButton"></button>
+                    <div class="modal fade" id="resultModalToggle" aria-hidden="true" aria-labelledby="resultModalToggleLabel" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="resultModalToggleLabel"></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Do you want to do it again?<br>
+                                    Or do you back to the top page?
+                                </div>
+                                <div class="modal-footer">
+                                    <a type="button" href="2fingers.html" class="btn btn-danger modalBtn">again</s>
+                                    <a type="button" href="../index.html" class="btn btn-success modalBtn">Back to top</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-2'>
+                    <div class='comName_Common'>Com</div>
                 </div>
                 <div class='col-2 offset-5'>
                     <a type="button" href="../index.html" class="btn btn-info">Back to Top</a>
                 </div>
             </div>
-            <div class='row mt-0 opponentArea_Common'>
-                <div class='col-2 offset-2'>
-                    <i id="opponentsRight" class='fa fa-hand-grab-o d-flex align-items-center justify-content-center opponentFingerSize_Common opponentFist_right'></i>
+            <div class='row mt-0 comArea_Common'>
+                <div class='col-2'>
+                    <div class="row mt-0">
+                        <div class="col-12">
+                            <div class="expectedNumber d-flex align-items-center justify-content-center">COM's Expected</div>
+                        </div>
+                    </div>
+                    <div class="expectedDisplay">
+                        <div class="row mt-0">
+                            <div class="col-12">
+                                <div id="expectedDisplayOfCom" class="totalDisplayOfCom fingerDisplay d-flex align-items-center justify-content-center">0</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class='col-2'>
-                    <i id="opponentsLeft" class='fa fa-hand-grab-o fa-flip-horizontal d-flex align-items-center justify-content-center opponentFingerSize_Common opponentFist_left'></i>
+                    <i id="comRight" class='fa fa-hand-grab-o d-flex align-items-center justify-content-center comFingerSize_Common comFist_right'></i>
+                </div>
+                <div class='col-2'>
+                    <i id="comLeft" class='fa fa-hand-grab-o fa-flip-horizontal d-flex align-items-center justify-content-center comFingerSize_Common comFist_left'></i>
                 </div>
                 <div class='col-4 offset-2'>
                     <a type="button" class="btn btn-success readyFight d-flex align-items-center justify-content-center">Ready Fight!!</a>
-                    <div class="row mt-5">
-                        <div class="col-6">
-                            <div id="totalDisplay" class="fingerDisplay d-flex align-items-center justify-content-center">0</div>
+                    <div class="expectedNumber">
+                        <div class="row mt-0">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center justify-content-center">Your Expected</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center justify-content-center">Fighting Fingers</div>
+                            </div>
                         </div>
-                        <div class="col-6">
-                            <div id="myDisplay" class="fingerDisplay d-flex align-items-center justify-content-center">0</div>
+                    </div>
+                    <div class="expectedDisplay">
+                        <div class="row mt-0">
+                            <div class="col-6">
+                                <div id="totalDisplay" class="fingerDisplay d-flex align-items-center justify-content-center">0</div>
+                            </div>
+                            <div class="col-6">
+                                <div id="myDisplay" class="fingerDisplay d-flex align-items-center justify-content-center">0</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class='row mt-0'>
-                <div class='col-2 offset-8 d-flex align-items-center justify-content-center buttonTextInfo'>
-                    Total Finger
+                <div class="col-4 offset-2 d-flex align-items-center justify-content-center turnAndResult turnAndResult_red">Your Turn</div>
+                <div class='col-2 offset-2 d-flex align-items-center justify-content-center buttonTextInfo'>
+                    Expected
                 </div>
                 <div class='col-2 d-flex align-items-center justify-content-center buttonTextInfo'>
-                    My Finger
+                    Your Fingers
                 </div>
             </div>
             <div class='row mt-0 playerArea_Common'>
@@ -60,16 +108,16 @@
                     <i id="playersRight" class='fa fa-hand-grab-o d-flex align-items-center justify-content-center playerFingerSize_Common playerFist_right'></i>
                 </div>
                 <div class='col-2 offset-1'>
-                    <a href="#" type="button" class="btn btn-warning fingerSelectBtn totalFingerEvent d-flex align-items-center justify-content-center" data-toggle="button" aria-pressed="false" autocomplete="off">0</a>
-                    <a href="#" type="button" class="btn btn-warning fingerSelectBtn totalFingerEvent d-flex align-items-center justify-content-center" data-toggle="button" aria-pressed="false" autocomplete="off">1</a>
-                    <a href="#" type="button" class="btn btn-warning fingerSelectBtn totalFingerEvent d-flex align-items-center justify-content-center" data-toggle="button" aria-pressed="false" autocomplete="off">2</a>
-                    <a href="#" type="button" class="btn btn-warning fingerSelectBtn totalFingerEvent d-flex align-items-center justify-content-center" data-toggle="button" aria-pressed="false" autocomplete="off">3</a>
-                    <a href="#" type="button" class="btn btn-warning fingerSelectBtn totalFingerEvent d-flex align-items-center justify-content-center" data-toggle="button" aria-pressed="false" autocomplete="off">4</a>
+                    <a href="#" type="button" class="btn btn-warning fingerSelectBtn totalFingerEvent d-flex align-items-center justify-content-center totalBtn" data-toggle="button" aria-pressed="false" autocomplete="off" aria-disabled="false">0</a>
+                    <a href="#" type="button" class="btn btn-warning fingerSelectBtn totalFingerEvent d-flex align-items-center justify-content-center totalBtn" data-toggle="button" aria-pressed="false" autocomplete="off" aria-disabled="false">1</a>
+                    <a href="#" type="button" class="btn btn-warning fingerSelectBtn totalFingerEvent d-flex align-items-center justify-content-center totalBtn" data-toggle="button" aria-pressed="false" autocomplete="off" aria-disabled="false">2</a>
+                    <a href="#" type="button" class="btn btn-warning fingerSelectBtn totalFingerEvent d-flex align-items-center justify-content-center totalBtn" data-toggle="button" aria-pressed="false" autocomplete="off" aria-disabled="false">3</a>
+                    <a href="#" type="button" class="btn btn-warning fingerSelectBtn totalFingerEvent d-flex align-items-center justify-content-center totalBtn" data-toggle="button" aria-pressed="false" autocomplete="off" aria-disabled="false">4</a>
                 </div>
                 <div class='col-2'>
-                    <a href="#" type="button" class="btn btn-danger fingerSelectBtn myFingerEvent d-flex align-items-center justify-content-center" data-toggle="button" aria-pressed="false" autocomplete="off">0</a>
-                    <a href="#" type="button" class="btn btn-danger fingerSelectBtn myFingerEvent d-flex align-items-center justify-content-center" data-toggle="button" aria-pressed="false" autocomplete="off">1</a>
-                    <a href="#" type="button" class="btn btn-danger fingerSelectBtn myFingerEvent d-flex align-items-center justify-content-center" data-toggle="button" aria-pressed="false" autocomplete="off">2</a>
+                    <a href="#" type="button" class="btn btn-danger fingerSelectBtn myFingerEvent d-flex align-items-center justify-content-center fightingBtn" data-toggle="button" aria-pressed="false" autocomplete="off" aria-disabled="false">0</a>
+                    <a href="#" type="button" class="btn btn-danger fingerSelectBtn myFingerEvent d-flex align-items-center justify-content-center fightingBtn" data-toggle="button" aria-pressed="false" autocomplete="off" aria-disabled="false">1</a>
+                    <a href="#" type="button" class="btn btn-danger fingerSelectBtn myFingerEvent d-flex align-items-center justify-content-center fightingBtn" data-toggle="button" aria-pressed="false" autocomplete="off" aria-disabled="false">2</a>
                 </div>
             </div>
             <div class='row mt-0'>
@@ -80,7 +128,8 @@
             </div>
         </div>
 
-
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <link rel='stylesheet' href='../CSS/style.css' />
         <link rel='stylesheet' href='../CSS/gamePage.css' />
         <script src='../JS/script.js'></script>
