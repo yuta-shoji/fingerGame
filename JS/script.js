@@ -69,6 +69,8 @@ let comFightingFingers = 0;
 //COMの学習
 let max = 0;
 let min = 0;
+//勝者の判断
+let whichWinner = false;
 
 //初期化
 function resetOnce () {
@@ -96,7 +98,7 @@ function winOrLose () {
         expectedDisplayOfCom.innerText = 0;
         showTurnAndResult("You Win !!!", "red");
         resultModalToggleLabel.innerHTML = "You Win! Congratulation!!! <i class='fa fa-thumbs-o-up fa-2x'></i><i class='fa fa-thumbs-o-up fa-2x'></i>"
-        return true;
+        return whichWinner = "player";
     } else if (comRemainingFingers === 0 && turnFlg === false) {  //COMゲーム勝利の場合
         resetOnce();
         closeFingers(playersRemainingFingers, "player");
@@ -105,7 +107,7 @@ function winOrLose () {
         expectedDisplayOfCom.innerText = 0;
         showTurnAndResult("You Lose......", "red");
         resultModalToggleLabel.innerHTML = "All right, cheer up!! <i class='fa fa-thumbs-o-up fa-2x'></i>"
-        return true;
+        return whichWinner = "com";
     }
 }
 
@@ -158,8 +160,6 @@ function getExpectedOfCom (fingers) {
 }
 //Fighting乱数取得
 function getFightingOfCom (max, min) {
-    console.log('max: ', max - 1);
-    console.log('min: ', min);
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
@@ -286,8 +286,6 @@ async function getReadyFight () {
         ComFingersTotal = GetComFingersTotal();
         comFightingFingers = getFightingOfCom(ComFingersTotal[0], ComFingersTotal[1]);
     }
-    console.log('予想合計: ', totalExpectedOfCom);
-    console.log('実際の数: ', comFightingFingers);
     //そのターンの指合計
     let totalFightingFingers = playersFightingFingers + comFightingFingers;
     //テキスト反映
@@ -323,8 +321,8 @@ async function getReadyFight () {
         } else if (totalExpectedOfCom !== totalFightingFingers && turnFlg === false) {  //【turn】COM【win】player
             showTurnAndResult("Safe !!!", "red");
         }
-        resetOnce();
         await _sleep(1500);
+        resetOnce();
         closeFingers(playersRemainingFingers, "player");
         closeFingers(comRemainingFingers, "com");
         expectedDisplayOfCom.innerText = 0;
@@ -333,8 +331,8 @@ async function getReadyFight () {
     if (isWinnerFlg) {
         totalOfFingersNow--;
         if (!winOrLose()) {
-            resetOnce();
             await _sleep(1500);
+            resetOnce();
             closeFingers(playersRemainingFingers, "player");
             closeFingers(comRemainingFingers, "com");
             expectedDisplayOfCom.innerText = 0;
@@ -342,7 +340,9 @@ async function getReadyFight () {
         } else {
             await _sleep(1500);
             modalButton.click();
-            congratulationsAudio.play();
+            if (whichWinner === "player") {
+                congratulationsAudio.play();
+            }
         }
     }
     if (!turnFlg) {

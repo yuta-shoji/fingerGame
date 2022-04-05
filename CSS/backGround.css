@@ -2,6 +2,8 @@ body {
     background:#ec6a38;
     -webkit-animation:colour 20s linear infinite;
     -moz-animation:colour 20s linear infinite;
+    height: 100%;
+    overflow: hidden;
 }
 @-webkit-keyframes colour{
     0%{

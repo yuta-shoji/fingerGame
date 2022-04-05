@@ -80,7 +80,44 @@ a.btn--shadow {
     box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
 }
 
+a.btn--green {
+    font-size : 13px;
+    font-family : "Arial Black";
+    color: #fff;
+    background-color: #23886a;
+    border-bottom: 5px solid #1c553a;
+    z-index: 2;
+    height: 40px;
+}
+a.btn--green:hover {
+    margin-top: 3px;
+    color: #fff;
+    background: #23886a;
+    border-bottom: 2px solid #1c553a;
+}
+a.btn--shadow2 {
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
 .fingerSizeInTop {
+    font-size: 50px;
+}
+
+.modal-body .thumbsCheck {
+    color: rgb(255, 255, 255);
+    font-size : 70px;
+    font-family : "Arial Black";
+    text-align : center;
+}
+
+.tapHereModalBtn {
+    font-size: 30px;
+    text-align: center;
+    font-family: "Arial Black";
+}
+
+.fingerSizeInTapHere {
     font-size: 50px;
 }
 
@@ -222,7 +259,7 @@ a.btn--shadow {
     display: none;
 }
 .modal-content {
-    background-color: #000000a4;
+    background-color: #000000b9;
 }
 .modal-title {
     color: #ffffff;
